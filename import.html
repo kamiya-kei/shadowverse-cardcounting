@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="シャドウバース,シャドバ,Shadowverse,ツール,冥府デッキ">
+<meta name="description" content="シャドウバース(シャドバ)の非公式カードカウンティングツールです。冥府デッキ等のお供にどうぞ！Shadowverse Portalで作成したデッキデータを利用できます。">
+<title>シャドウバース カウンティングツール インポート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum-scale=0.2, maximum-scale=1.0">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+<header>
+    <h1><b>シャドウバース カウンティング ツール</b><b>シャドバ ツール</b></h1>
+    <nav>
+        <a href="./" class="fa fa-pencil"><b>トップ</b></a>
+        <a href="./import.html" class="fa fa-arrow-circle-down"><b>インポート</b></a>
+   </nav>
+</header>
+<article id="ClassSelect">
+    <h1>デッキデータインポート</h1>
+    <p>
+        <strong>デッキ</strong>構築支援サイト「<a href="https://shadowverse-portal.com/" target="_blank" rel="nofollow">Shadowverse Portal</a>」
+        で作成した<strong>デッキ</strong>をインポート(当サイトのデッキデータに変換)することができます。
+    </p>
+</article>
+<article>
+    <h1>インポート</h1>
+    <p>
+        下記に<strong>Shadowverse</strong> Portalの<b>デッキ詳細</b>ページの<b>URL</b>をコピペして、変換ボタンを押してください。<br>
+        <div class="my-search">
+            <input id="deck" type="text" placeholder="https://">
+            <button id="import">変換</button>
+        </div>
+    </p>
+</article>
+<article>
+    <h1>結果</h1>
+    <p id="result"></p>
+</article>
+
+<!--article>
+    <h1>ブックマークレット(上級者向け)</h1>
+    <p>
+        ブックマークレットを用いて、<strong>Shadowverse</strong> Portalのデッキページから直接<strong>デッキ</strong>のインポートを行い、当サイトに移動することも出来ます。
+        <br>
+        <textarea>javascript:!function(f){var s=document.createElement('script');s.src=f+'?'+(new Date()).getTime();document.body.appendChild(s);}('http://shadowverse.coresv.com/b.js');</textarea>
+    </p>
+</article-->
+<script src="./js/lib/jquery-2.1.0.min.js"></script>
+<script src="./data/data.js"></script>
+<script src="./js/import.js"></script>
+</body>
+</html>

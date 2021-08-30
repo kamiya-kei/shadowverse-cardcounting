@@ -1,0 +1,21 @@
+#AddType "text/plain; charset=UTF-8" py
+AddDefaultCharset UTF-8
+
+#キャッシュの有効期限
+<FilesMatch ".(gif|jpg|png|ico|js|css|txt)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+#BINGクローラーを拒否
+SetEnvIf User-Agent "msnbot" shutout
+SetEnvIf User-Agent "bingbot" shutout
+
+order Allow,Deny
+Allow from all
+Deny from env=shutout
+
+#URLを静的ファイル風に偽装
+RewriteEngine on
+
+#ブックマークレット
+RewriteRule ^b\.js$  js/b.js.php [L]

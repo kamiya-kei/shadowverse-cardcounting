@@ -1,0 +1,118 @@
+.tablesorter th.header:not(.headerSortDown):not(.headerSortUp):before {
+    content: url("../img/bg.gif");
+}
+.tablesorter th.headerSortUp:before {
+    content: url("../img/asc.gif");
+}
+.tablesorter th.headerSortDown:before {
+    content: url("../img/desc.gif");
+}
+
+
+@media screen and (min-width: 530px) {
+    header h1 b:last-of-type {
+        display: none;
+    }
+}
+@media screen and (max-width: 529px) {
+    header h1 b:first-of-type {
+        display: none;
+    }
+    button {
+        margin: 10px 0;
+    }
+    header nav a:not(:first-child) {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 769px) {
+    #Game,
+    #ClassSelect {
+        margin-top: 60px;
+    }
+}
+@media screen and (min-width: 769px) {
+    header nav a {
+        width: 150px;
+    }
+}
+#ClassSelect button,
+#CardSelect p button,
+#Game p:nth-of-type(1) button {
+    width: 150px;
+}
+#ClassSelect button:nth-of-type(1),
+#ClassSelect button:nth-of-type(2),
+#ClassSelect button:nth-of-type(3),
+#ClassSelect button:nth-of-type(5),
+#ClassSelect button:nth-of-type(6) {
+    margin-right: 10px;
+}
+
+
+#CardSelect p,
+#Game p {
+    font-size: 20px;
+}
+#CardSelect p span,
+#Game p span {
+    font-size: 20px;
+    color: blue;
+}
+/*
+#Game {
+    min-height: 630px;
+}
+*/
+#Save input {
+    width: 600px;
+}
+
+option:disabled {
+    color: white;
+    background-color: silver;
+}
+textarea {
+    width: 500px;
+    height: 50px;
+}
+#CardSelect #toImport {
+    width: 200px;
+}
+#Game, #Readme, #Save {
+    display: none;
+}
+#pull span {
+    display: none;
+}
+#Game .nothing td {
+    color: white;
+    background-color: gray;
+}
+#Game .notmax td {
+    background-color: silver;
+    /* opacity: 0.8; */
+}
+
+article b,
+aside b {
+    color: #ff8432;
+}
+strong.b {
+    color: #ff8432;
+}
+
+.info-tgl h1:after {
+    content: '';
+}
+.info-tgl div {
+    display: block;
+}
+.info-tgl div b {
+    width: auto;
+}
+
+
+
+
+

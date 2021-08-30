@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="シャドウバース,シャドバ,Shadowverse,ツール,冥府デッキ">
+<meta name="description" content="Cygamesにて配信中の本格スマホカードバトル、Shadowverse(シャドウバース)通称シャドバの非公式デッキ管理・カードカウンティング支援サイトです。ゲームプレイにおいて、デッキの山札にどのカードが何枚残っているか、何枚引けばどのくらいの確率で特定のカードが引けるかが分かるウェブアプリ・ツールを公開しています。冥府デッキ等のお供にどうぞ！">
+<title>シャドウバース カウンティングツール</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum-scale=0.2, maximum-scale=1.0">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+<header>
+    <h1><b>シャドウバース カウンティング ツール</b><b>シャドバ ツール</b></h1>
+    <nav>
+        <a href="./" class="fa fa-pencil"><b>トップ</b></a>
+        <a href="./import.html" class="fa fa-arrow-circle-down"><b>インポート</b></a>
+    </nav>
+</header>
+
+<article id="Game">
+    <h1>ゲーム</h1>
+    <p>
+        <button class="gf-btn-b">ゲーム開始</button>
+        <span>40</span>/40枚
+    </p>
+    <p id="pull">
+        <button class="gf-btn-sp">１ 枚引く</button>
+        <button class="gf-btn-sb">２ 枚引く</button>
+        <button class="gf-btn-sb">３ 枚引く</button>
+        <button class="gf-btn-sb">４ 枚引く</button>
+        <button class="gf-btn-sb">５ 枚引く</button>
+        <br>
+        <button class="gf-btn-sb">６ 枚引く</button>
+        <button class="gf-btn-sb">７ 枚引く</button>
+        <button class="gf-btn-sb">８ 枚引く</button>
+        <button class="gf-btn-sb">９ 枚引く</button>
+        <input type="button" class="gf-btn-sb" value="もっと引く">
+        <span>
+            <br>
+            <button class="gf-btn-sb">１０</button>
+            <button class="gf-btn-sb">１１</button>
+            <button class="gf-btn-sb">１２</button>
+            <button class="gf-btn-sb">１３</button>
+            <button class="gf-btn-sb">１４</button>
+            <button class="gf-btn-sb">１５</button>
+            <button class="gf-btn-sb">１６</button>
+            <button class="gf-btn-sb">１７</button>
+            <button class="gf-btn-sb">１８</button>
+            <button class="gf-btn-sb">１９</button>
+            <button class="gf-btn-sb">２０</button>
+        </span>
+    </p>
+    <table class="gf-table tablesorter">
+        <thead>
+            <tr>
+                <th>確率</th>
+                <th>枚数</th>
+                <th class="{sorter:'text'}">カード名</th>
+                <th>クラス</th>
+                <th>種類</th>
+                <th>レアリティ</th>
+                <th>コスト</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</article>
+<aside id="Readme">
+    <div class="info-tgl">
+        <h1>確率について</h1>
+        <div>
+            ・確率欄には、その上で選択している引く枚数(デフォルト：１枚)を山札から引いた時「<b>少なくとも１枚引く確率</b>」を出力します。        </div>
+    </div>
+    <div class="info-tgl">
+        <h1 >表のソート機能について</h1>
+        <div>
+            ・表の<b>カラム名</b>をクリックするとその項目でソートできます。
+            <br>
+            ・更に<b>Shiftキー</b>を押しながら別の項目をクリックで<b>多項目ソート</b>が可能です。
+        </div>
+    </div>
+</aside>
+
+<article id="Save">
+    <h1>デッキの保存</h1>
+    <p>
+        このページをブックマークすれば、いつでもこのデッキを利用してすぐに当ツールが使えます。<br>
+        以下ボックス内のURLでもOKです。<br>
+        <input type="text">
+    </p>
+</article>
+
+
+<article id="ClassSelect">
+    <h1>クラス選択</h1>
+    <p>
+        <button>エルフ</button>
+        <button>ロイヤル</button>
+        <button>ウィッチ</button>
+        <button>ドラゴン</button>
+        <br><br>
+        <button>ネクロマンサー</button>
+        <button>ヴァンパイア</button>
+        <button>ビショップ</button>
+    </p>
+</article>
+
+<article id="CardSelect">
+    <h1>カード選択</h1>
+    <p>
+        <button class="gf-btn-p">リセット</button>
+        <span>0</span>/40枚
+        <button id="toImport" class="gf-btn-b">インポートページヘ</button>
+    </p>
+    <table class="gf-table tablesorter">
+        <thead>
+            <tr>
+                <th>枚数</th>
+                <th class="{sorter:'text'}">カード名</th>
+                <th>クラス</th>
+                <th>種類</th>
+                <th>レアリティ</th>
+                <th>コスト</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</article>
+
+<aside id="Readme2">
+    <div class="info-tgl">
+        <h1 >表のソート機能について</h1>
+        <div>
+            ・表の<b>カラム名</b>をクリックするとその項目でソートできます。
+            <br>
+            ・更に<b>Shiftキー</b>を押しながら別の項目をクリックで<b>多項目ソート</b>が可能です。
+        </div>
+    </div>
+</aside>
+
+<article>
+    <h1>当サイトについて</h1>
+    <p>
+        <strong>Shadowverse</strong>(<strong>シャドウバース</strong>、<strong>シャドバ</strong>)の<b>非公式</b>カードカウンティング支援サイトです。<br>
+        ゲームプレイにおいて、デッキの山札にどのカードが何枚残っているか、何枚引けばどのくらいの確率で特定のカードが引けるかが分かるウェブアプリ・<strong>ツール</strong>を公開しています。<br>
+        <strong class="b">冥府デッキ</strong>等のお供にどうぞ！
+    </p>
+    <p>
+        <a href="./import.html">インポート</a>ページで、Shadowverse Portalで作成したデッキデータをインポートすることも可能です。
+    </p>
+</article>
+
+<article id="Keyword">
+    <h1>キーワード</h1>
+    <p><strong>冥府への道</strong>、収穫祭、新たなる運命、マリガン確率</p>
+</article>
+<script src="./js/lib/jquery-2.1.0.min.js"></script>
+<script src="./js/lib/jquery.tablesorter.min.js"></script>
+<script src="./data/data.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
